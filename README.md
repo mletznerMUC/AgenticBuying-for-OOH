@@ -1,4 +1,4 @@
-# Standards for Agentic Advertising in OOH
+# Standard extensions for Agentic Advertising in OOH
 
 An open working repository for **OOH- and DOOH-specific standards and standard
 extensions** for the two emerging agentic advertising protocols:
