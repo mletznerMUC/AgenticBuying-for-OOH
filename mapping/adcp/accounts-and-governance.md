@@ -20,9 +20,17 @@ restrictions, parts of 02 Trading, parts of 06 Delivery.
 
 ## Mapping table
 
-| Requirement | Target | Change type | Rationale | Confidence |
-| --- | --- | --- | --- | --- |
-| *TBD* | | | | |
+`P` = this surface is the addition's primary home (define the semantic here); `S` = secondary binding. Roles are from [`../../PLAN.md`](../../PLAN.md) §3. Target and change type are filled in once this surface is verified against the current upstream revision — see [`../../PLAN.md`](../../PLAN.md) §6.
+
+| Addition (R1.0) | Role | Target | Change type | Confidence |
+| --- | :-: | --- | --- | --- |
+| [ADD-011](../../additions/ADD-011-compliance-declarations.md) · Compliance declarations | `P` | | | unverified |
+| [ADD-012](../../additions/ADD-012-advertiser-loop-separation.md) · Advertiser loop separation | `P` | | | unverified |
+| [ADD-005](../../additions/ADD-005-location-disclosure-tiers.md) · Location disclosure tiers | `S` | | | unverified |
+| [ADD-008](../../additions/ADD-008-creative-approval-lifecycle.md) · Creative approval lifecycle | `S` | | | unverified |
+| [ADD-010](../../additions/ADD-010-dynamic-creative-authorisation.md) · Dynamic creative authorisation | `S` | | | unverified |
+| [ADD-013](../../additions/ADD-013-deal-access-and-response-obligation.md) · Deal access & response obligation | `S` | | | unverified |
+| [ADD-014](../../additions/ADD-014-accreditation-io-and-settlement.md) · Accreditation, IO & settlement | `S` | | | unverified |
 
 ## Open questions
 

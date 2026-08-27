@@ -26,9 +26,18 @@ parts of 08 Compliance.
 
 ## Mapping table
 
-| Requirement | Target | Change type | Rationale | Confidence |
-| --- | --- | --- | --- | --- |
-| *TBD* | | | | |
+`P` = this surface is the addition's primary home (define the semantic here); `S` = secondary binding. Roles are from [`../../PLAN.md`](../../PLAN.md) §3. Target and change type are filled in once this surface is verified against the current upstream revision — see [`../../PLAN.md`](../../PLAN.md) §6.
+
+| Addition (R1.0) | Role | Target | Change type | Confidence |
+| --- | :-: | --- | --- | --- |
+| [ADD-001](../../additions/ADD-001-total-audience-impressions.md) · Total Audience Impressions | `S` | | | unverified |
+| [ADD-002](../../additions/ADD-002-play-chain-and-player-model.md) · Play chain / player model | `S` | | | unverified |
+| [ADD-003](../../additions/ADD-003-delayed-play-confirmation.md) · Delayed play confirmation | `S` | | | unverified |
+| [ADD-008](../../additions/ADD-008-creative-approval-lifecycle.md) · Creative approval lifecycle | `S` | | | unverified |
+| [ADD-009](../../additions/ADD-009-creative-integrity-and-caching.md) · Creative integrity & caching | `S` | | | unverified |
+| [ADD-010](../../additions/ADD-010-dynamic-creative-authorisation.md) · Dynamic creative authorisation | `S` | | | unverified |
+| [ADD-011](../../additions/ADD-011-compliance-declarations.md) · Compliance declarations | `S` | | | unverified |
+| [ADD-016](../../additions/ADD-016-seller-conformance-profile.md) · Seller conformance profile | `S` | | | unverified |
 
 ## Open questions
 

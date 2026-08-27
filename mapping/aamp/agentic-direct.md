@@ -28,9 +28,19 @@ From [`../../ooh-specifics/`](../../ooh-specifics/): 02 Trading, 06 Delivery,
 
 ## Mapping table
 
-| Requirement | Target | Change type | Rationale | Confidence |
-| --- | --- | --- | --- | --- |
-| *TBD* | | | | |
+`P` = this surface is the addition's primary home (define the semantic here); `S` = secondary binding. Roles are from [`../../PLAN.md`](../../PLAN.md) §3. Target and change type are filled in once this surface is verified against the current upstream revision — see [`../../PLAN.md`](../../PLAN.md) §6.
+
+| Addition (R1.0) | Role | Target | Change type | Confidence |
+| --- | :-: | --- | --- | --- |
+| [ADD-014](../../additions/ADD-014-accreditation-io-and-settlement.md) · Accreditation, IO & settlement | `P` | | | unverified |
+| [ADD-015](../../additions/ADD-015-ooh-planning-metrics.md) · OOH planning metrics | `P` | | | unverified |
+| [ADD-003](../../additions/ADD-003-delayed-play-confirmation.md) · Delayed play confirmation | `S` | | | unverified |
+| [ADD-005](../../additions/ADD-005-location-disclosure-tiers.md) · Location disclosure tiers | `S` | | | unverified |
+| [ADD-006](../../additions/ADD-006-creative-format-constraints.md) · Creative format constraints | `S` | | | unverified |
+| [ADD-008](../../additions/ADD-008-creative-approval-lifecycle.md) · Creative approval lifecycle | `S` | | | unverified |
+| [ADD-010](../../additions/ADD-010-dynamic-creative-authorisation.md) · Dynamic creative authorisation | `S` | | | unverified |
+| [ADD-011](../../additions/ADD-011-compliance-declarations.md) · Compliance declarations | `S` | | | unverified |
+| [ADD-013](../../additions/ADD-013-deal-access-and-response-obligation.md) · Deal access & response obligation | `S` | | | unverified |
 
 ## Open questions
 
