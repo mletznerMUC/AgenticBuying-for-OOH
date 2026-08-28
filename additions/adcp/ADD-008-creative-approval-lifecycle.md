@@ -1,7 +1,7 @@
 ---
 id: ADD-008
 title: Creative Approval Lifecycle and SLA
-version: 0.1.0
+version: 0.2.0
 status: draft
 since: R1.0
 supersedes: []
@@ -12,11 +12,30 @@ targets:
   aamp: [agentic-direct, trust-and-transparency]
 applies_to: [programmatic, io]
 target_revision_checked: 2026-08-27
+protocol_ownership:
+  owner: adcp
+  secondary: [aamp]
+upstream_status: partial
+verified_against:
+  adcp: 3.2.0-beta.8
+  aamp: "agentic-direct/OpenDirect-2.1; ARTF/OpenRTB-2.6"
+  date: 2026-08-27
 ---
 
 # ADD-008 — Creative Approval Lifecycle and SLA
 
-> Version 0.1.0 · Status: `draft` · Since `R1.0`
+> Version 0.2.0 · Status: `draft` · Since `R1.0`
+>
+> **Protocol owner: AdCP** · also binds into AAMP
+>
+> 🟡 **Verified partially exists upstream** against AdCP 3.2.0-beta.8 and AAMP (OpenDirect 2.1 / OpenRTB 2.6) on 2026-08-27.
+
+## Verification
+
+`creative-approval-status` and 17 `creative-event-reason-code` values already exist, including `policy_revocation`. **R1.0's headline blocker — the rejection reason taxonomy — is specified upstream.** Only the SLA declaration remains.
+
+Full evidence: [`../verification/verdicts.md`](../../verification/verdicts.md) · [`../verification/adcp-3.2.md`](../../verification/adcp-3.2.md) · [`../verification/aamp.md`](../../verification/aamp.md)
+
 
 ## Problem
 
@@ -168,4 +187,5 @@ are scattered across a PDF, a REST API and a sales e-mail.
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 0.2.0 | 2026-08-27 | Verified against AdCP 3.2.0-beta.8 and AAMP; added protocol ownership and upstream status |
 | 0.1.0 | 2026-08-27 | Initial draft from Ströer Creative Approval analysis |

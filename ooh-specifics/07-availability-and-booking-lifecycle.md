@@ -27,6 +27,18 @@ that expires, a print deadline, or a booking that cannot start on an arbitrary
 Tuesday. Agents that cannot reason about holds and lead times will produce plans
 that cannot actually be executed.
 
+> ### ⚠️ Partly contradicted by verification (2026-08-27)
+>
+> **A hold that expires is representable**: `OpenDirect.Line.reservedexpirydate`, in
+> AAMP Agentic Direct. Lead time and minimum commitments are too —
+> `OpenDirect.Product.leadtime` ("days from today that line can begin"), `minspend`,
+> `minflight`, `maxflight`. AdCP adds `commercial-terms.cancellation_terms` and
+> `core/cancellation-policy.json`, and `ChangeRequest` covers amendments.
+>
+> What remains genuinely unmet is the **availability calendar** — per-screen, per-daypart
+> capacity — and fixed booking-period start dates. Narrow the claim above accordingly.
+> See [`../verification/aamp.md`](../verification/aamp.md) §4.
+
 ## Requirements
 
 `R-BOOK-1` … *to be written.*

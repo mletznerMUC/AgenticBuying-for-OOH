@@ -12,11 +12,31 @@ targets:
   aamp: []
 applies_to: [programmatic, io]
 target_revision_checked: null
+protocol_ownership:
+  owner: adcp          # adcp | aamp — the protocol that owns the DEFINITION.
+  secondary: []        # other protocols this binds into
+upstream_status: gap   # exists | partial | gap — from verification/
+verified_against:
+  adcp: null
+  aamp: null
+  date: null
 ---
 
 # ADD-NNN — Short title
 
 > Version 0.1.0 · Status: `draft` · Not in a release yet
+>
+> **Protocol owner: AdCP** · also binds into …
+>
+> 🔴 **Verified confirmed gap** against AdCP <rev> and AAMP <rev> on <date>.
+
+## Verification
+
+What already exists upstream, and what therefore remains to be asked for. **Check
+before writing the rest of this document** — verification found that most R1.0
+additions proposed things the protocols already had.
+
+Full evidence: `../../verification/verdicts.md` (relative to `additions/<owner>/`)
 
 ## Problem
 
@@ -37,7 +57,9 @@ How the concept is carried in a real-time transaction.
 
 **Today (Ströer):** the existing proprietary encoding, verbatim.
 
-**Proposed:** the standard encoding, and which upstream object it attaches to.
+**Already upstream:** the existing standard field or object, cited by schema path.
+
+**Proposed:** what remains to be added, and which upstream object it attaches to.
 
 ## Offer / IO binding
 

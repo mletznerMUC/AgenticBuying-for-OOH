@@ -1,7 +1,7 @@
 ---
 id: ADD-006
 title: Creative Format Constraints and Landlord Media-Type Restrictions
-version: 0.1.0
+version: 0.2.0
 status: draft
 since: R1.0
 supersedes: []
@@ -12,11 +12,30 @@ targets:
   aamp: [artf, agentic-direct]
 applies_to: [programmatic, io]
 target_revision_checked: 2026-08-27
+protocol_ownership:
+  owner: adcp
+  secondary: [aamp]
+upstream_status: partial
+verified_against:
+  adcp: 3.2.0-beta.8
+  aamp: "agentic-direct/OpenDirect-2.1; ARTF/OpenRTB-2.6"
+  date: 2026-08-27
 ---
 
 # ADD-006 — Creative Format Constraints and Landlord Media-Type Restrictions
 
-> Version 0.1.0 · Status: `draft` · Since `R1.0`
+> Version 0.2.0 · Status: `draft` · Since `R1.0`
+>
+> **Protocol owner: AdCP** · also binds into AAMP
+>
+> 🟡 **Verified partially exists upstream** against AdCP 3.2.0-beta.8 and AAMP (OpenDirect 2.1 / OpenRTB 2.6) on 2026-08-27.
+
+## Verification
+
+`creative_policy` and `material_submission` (explicitly for print and static OOH) exist. Missing: a DOOH format family with exact duration, a `restricted_motion` form, and the landlord reason class.
+
+Full evidence: [`../verification/verdicts.md`](../../verification/verdicts.md) · [`../verification/adcp-3.2.md`](../../verification/adcp-3.2.md) · [`../verification/aamp.md`](../../verification/aamp.md)
+
 
 ## Problem
 
@@ -177,4 +196,5 @@ answer, before committing: *do I have the creative assets this offer needs?*
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 0.2.0 | 2026-08-27 | Verified against AdCP 3.2.0-beta.8 and AAMP; added protocol ownership and upstream status |
 | 0.1.0 | 2026-08-27 | Initial draft from Ströer Static Creatives analysis |

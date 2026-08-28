@@ -29,18 +29,18 @@ From [`../../ooh-specifics/`](../../ooh-specifics/):
 
 | Addition (R1.0) | Role | Target | Change type | Confidence |
 | --- | :-: | --- | --- | --- |
-| [ADD-001](../../additions/ADD-001-total-audience-impressions.md) · Total Audience Impressions | `P` | | | unverified |
-| [ADD-002](../../additions/ADD-002-play-chain-and-player-model.md) · Play chain / player model | `P` | | | unverified |
-| [ADD-003](../../additions/ADD-003-delayed-play-confirmation.md) · Delayed play confirmation | `P` | | | unverified |
-| [ADD-004](../../additions/ADD-004-venue-and-network-taxonomy.md) · Venue & network taxonomy | `P` | | | unverified |
-| [ADD-005](../../additions/ADD-005-location-disclosure-tiers.md) · Location disclosure tiers | `P` | | | unverified |
-| [ADD-013](../../additions/ADD-013-deal-access-and-response-obligation.md) · Deal access & response obligation | `P` | | | unverified |
-| [ADD-006](../../additions/ADD-006-creative-format-constraints.md) · Creative format constraints | `S` | | | unverified |
-| [ADD-007](../../additions/ADD-007-synchronised-multi-screen-delivery.md) · Sync groups | `S` | | | unverified |
-| [ADD-012](../../additions/ADD-012-advertiser-loop-separation.md) · Advertiser loop separation | `S` | | | unverified |
-| [ADD-014](../../additions/ADD-014-accreditation-io-and-settlement.md) · Accreditation, IO & settlement | `S` | | | unverified |
-| [ADD-015](../../additions/ADD-015-ooh-planning-metrics.md) · OOH planning metrics | `S` | | | unverified |
-| [ADD-016](../../additions/ADD-016-seller-conformance-profile.md) · Seller conformance profile | `S` | | | unverified |
+| [ADD-001](../../additions/aamp/ADD-001-total-audience-impressions.md) · Total Audience Impressions | `P` | | | unverified |
+| [ADD-002](../../additions/adcp/ADD-002-play-chain-and-player-model.md) · Play chain / player model | `P` | | | unverified |
+| [ADD-003](../../additions/adcp/ADD-003-delayed-play-confirmation.md) · Delayed play confirmation | `P` | | | unverified |
+| [ADD-004](../../additions/aamp/ADD-004-venue-and-network-taxonomy.md) · Venue & network taxonomy | `P` | | | unverified |
+| [ADD-005](../../additions/adcp/ADD-005-location-disclosure-tiers.md) · Location disclosure tiers | `P` | | | unverified |
+| [ADD-013](../../additions/adcp/ADD-013-deal-access-and-response-obligation.md) · Deal access & response obligation | `P` | | | unverified |
+| [ADD-006](../../additions/adcp/ADD-006-creative-format-constraints.md) · Creative format constraints | `S` | | | unverified |
+| [ADD-007](../../additions/adcp/ADD-007-synchronised-multi-screen-delivery.md) · Sync groups | `S` | | | unverified |
+| [ADD-012](../../additions/adcp/ADD-012-advertiser-loop-separation.md) · Advertiser loop separation | `S` | | | unverified |
+| [ADD-014](../../additions/aamp/ADD-014-accreditation-io-and-settlement.md) · Accreditation, IO & settlement | `S` | | | unverified |
+| [ADD-015](../../additions/adcp/ADD-015-ooh-planning-metrics.md) · OOH planning metrics | `S` | | | unverified |
+| [ADD-016](../../additions/adcp/ADD-016-seller-conformance-profile.md) · Seller conformance profile | `S` | | | unverified |
 
 ## Open questions
 

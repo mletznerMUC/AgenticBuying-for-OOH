@@ -1,7 +1,7 @@
 ---
 id: ADD-001
 title: Total Audience Impressions
-version: 0.1.0
+version: 0.2.0
 status: draft
 since: R1.0
 supersedes: []
@@ -12,11 +12,30 @@ targets:
   aamp: [artf, agentic-audiences]
 applies_to: [programmatic, io]
 target_revision_checked: 2026-08-27
+protocol_ownership:
+  owner: aamp
+  secondary: [adcp]
+upstream_status: exists
+verified_against:
+  adcp: 3.2.0-beta.8
+  aamp: "agentic-direct/OpenDirect-2.1; ARTF/OpenRTB-2.6"
+  date: 2026-08-27
 ---
 
 # ADD-001 — Total Audience Impressions
 
-> Version 0.1.0 · Status: `draft` · Since `R1.0`
+> Version 0.2.0 · Status: `draft` · Since `R1.0`
+>
+> **Protocol owner: AAMP** · also binds into AdCP
+>
+> 🟢 **Verified exists upstream** against AdCP 3.2.0-beta.8 and AAMP (OpenDirect 2.1 / OpenRTB 2.6) on 2026-08-27.
+
+## Verification
+
+OpenRTB 2.6 `Imp.Qty` already carries the fractional multiplier, source type and measurement vendor. Ströer's `imp.ext.totalaud` is a pre-2.6 workaround. Ask becomes migration guidance plus settled-figure provenance.
+
+Full evidence: [`../verification/verdicts.md`](../../verification/verdicts.md) · [`../verification/adcp-3.2.md`](../../verification/adcp-3.2.md) · [`../verification/aamp.md`](../../verification/aamp.md)
+
 
 ## Problem
 
@@ -164,4 +183,5 @@ aggregation level — which is the intended outcome: one definition, two altitud
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 0.2.0 | 2026-08-27 | Verified against AdCP 3.2.0-beta.8 and AAMP; added protocol ownership and upstream status |
 | 0.1.0 | 2026-08-27 | Initial draft from Ströer PPV v6 analysis |

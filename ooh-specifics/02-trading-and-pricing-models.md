@@ -26,6 +26,19 @@ A pricing model enum of `cpm | cpc | cpcv` cannot express "€X per panel per ca
 week" or "20 % share of voice in this loop, 06:00–10:00, for two weeks". Nor can an
 impression-pacing model express loop-share pacing.
 
+> ### ⚠️ Partly contradicted by verification (2026-08-27)
+>
+> AdCP 3.2 is not limited to `cpm | cpc | cpcv`. It has twelve pricing options,
+> including **`time-option`** (per `hour`/`day`/`week`/`month`, with `min_duration` and
+> `max_duration`), **`flat-rate-option`** with DOOH parameters carrying
+> **`sov_percentage`**, `loop_duration_seconds` and `min_plays_per_hour`, and
+> **`cpp-option`** for cost per point. `OpenDirect.Product.ratetype` includes `CPD` and
+> `FlatRate`.
+>
+> So panel-per-period pricing and share-of-voice **are** expressible. The claim above
+> needs rewriting when this document is filled in. See
+> [`../verification/adcp-3.2.md`](../verification/adcp-3.2.md) §4.
+
 ## Requirements
 
 `R-TRD-1` … *to be written.*

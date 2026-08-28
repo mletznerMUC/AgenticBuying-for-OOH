@@ -30,8 +30,8 @@ From [`../../ooh-specifics/`](../../ooh-specifics/): 03 Audience & measurement,
 
 | Addition (R1.0) | Role | Target | Change type | Confidence |
 | --- | :-: | --- | --- | --- |
-| [ADD-001](../../additions/ADD-001-total-audience-impressions.md) · Total Audience Impressions | `S` | | | unverified |
-| [ADD-015](../../additions/ADD-015-ooh-planning-metrics.md) · OOH planning metrics | `S` | | | unverified |
+| [ADD-001](../../additions/aamp/ADD-001-total-audience-impressions.md) · Total Audience Impressions | `S` | | | unverified |
+| [ADD-015](../../additions/adcp/ADD-015-ooh-planning-metrics.md) · OOH planning metrics | `S` | | | unverified |
 
 ## Open questions
 

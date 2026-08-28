@@ -28,9 +28,9 @@ From [`../../ooh-specifics/`](../../ooh-specifics/): 01 Inventory, 02 Trading,
 
 | Addition (R1.0) | Role | Target | Change type | Confidence |
 | --- | :-: | --- | --- | --- |
-| [ADD-016](../../additions/ADD-016-seller-conformance-profile.md) · Seller conformance profile | `P` | | | unverified |
-| [ADD-004](../../additions/ADD-004-venue-and-network-taxonomy.md) · Venue & network taxonomy | `S` | | | unverified |
-| [ADD-014](../../additions/ADD-014-accreditation-io-and-settlement.md) · Accreditation, IO & settlement | `S` | | | unverified |
+| [ADD-016](../../additions/adcp/ADD-016-seller-conformance-profile.md) · Seller conformance profile | `P` | | | unverified |
+| [ADD-004](../../additions/aamp/ADD-004-venue-and-network-taxonomy.md) · Venue & network taxonomy | `S` | | | unverified |
+| [ADD-014](../../additions/aamp/ADD-014-accreditation-io-and-settlement.md) · Accreditation, IO & settlement | `S` | | | unverified |
 
 ## Open questions
 

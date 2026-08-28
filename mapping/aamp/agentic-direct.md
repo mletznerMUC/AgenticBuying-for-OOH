@@ -32,15 +32,15 @@ From [`../../ooh-specifics/`](../../ooh-specifics/): 02 Trading, 06 Delivery,
 
 | Addition (R1.0) | Role | Target | Change type | Confidence |
 | --- | :-: | --- | --- | --- |
-| [ADD-014](../../additions/ADD-014-accreditation-io-and-settlement.md) · Accreditation, IO & settlement | `P` | | | unverified |
-| [ADD-015](../../additions/ADD-015-ooh-planning-metrics.md) · OOH planning metrics | `P` | | | unverified |
-| [ADD-003](../../additions/ADD-003-delayed-play-confirmation.md) · Delayed play confirmation | `S` | | | unverified |
-| [ADD-005](../../additions/ADD-005-location-disclosure-tiers.md) · Location disclosure tiers | `S` | | | unverified |
-| [ADD-006](../../additions/ADD-006-creative-format-constraints.md) · Creative format constraints | `S` | | | unverified |
-| [ADD-008](../../additions/ADD-008-creative-approval-lifecycle.md) · Creative approval lifecycle | `S` | | | unverified |
-| [ADD-010](../../additions/ADD-010-dynamic-creative-authorisation.md) · Dynamic creative authorisation | `S` | | | unverified |
-| [ADD-011](../../additions/ADD-011-compliance-declarations.md) · Compliance declarations | `S` | | | unverified |
-| [ADD-013](../../additions/ADD-013-deal-access-and-response-obligation.md) · Deal access & response obligation | `S` | | | unverified |
+| [ADD-014](../../additions/aamp/ADD-014-accreditation-io-and-settlement.md) · Accreditation, IO & settlement | `P` | | | unverified |
+| [ADD-015](../../additions/adcp/ADD-015-ooh-planning-metrics.md) · OOH planning metrics | `P` | | | unverified |
+| [ADD-003](../../additions/adcp/ADD-003-delayed-play-confirmation.md) · Delayed play confirmation | `S` | | | unverified |
+| [ADD-005](../../additions/adcp/ADD-005-location-disclosure-tiers.md) · Location disclosure tiers | `S` | | | unverified |
+| [ADD-006](../../additions/adcp/ADD-006-creative-format-constraints.md) · Creative format constraints | `S` | | | unverified |
+| [ADD-008](../../additions/adcp/ADD-008-creative-approval-lifecycle.md) · Creative approval lifecycle | `S` | | | unverified |
+| [ADD-010](../../additions/adcp/ADD-010-dynamic-creative-authorisation.md) · Dynamic creative authorisation | `S` | | | unverified |
+| [ADD-011](../../additions/adcp/ADD-011-compliance-declarations.md) · Compliance declarations | `S` | | | unverified |
+| [ADD-013](../../additions/adcp/ADD-013-deal-access-and-response-obligation.md) · Deal access & response obligation | `S` | | | unverified |
 
 ## Open questions
 

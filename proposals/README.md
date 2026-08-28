@@ -27,28 +27,58 @@ AdCP or AAMP. It is the unit we hand to a working group.
 | `superseded` | Replaced by a later OEP — link it |
 
 An OEP bundles one or more **additions** ([`../additions/`](../additions/)) into a
-coherent ask. Additions are the long-lived, versioned definitions; an OEP is a one-shot
-submission. See [`../VERSIONING.md`](../VERSIONING.md) §5 for why the two are separate.
+coherent ask to **one** protocol. Additions are the long-lived, versioned definitions;
+an OEP is a one-shot submission. See [`../VERSIONING.md`](../VERSIONING.md) §5.
 
-## Index
+## Proposals are organised by target protocol
 
-| OEP | Title | Target | Status |
-| --- | --- | --- | --- |
-| — | *none written yet* | | |
+```
+proposals/
+├── adcp/     Proposals to AdCP        — OEP-ADCP-NNNN
+└── aamp/     Proposals to AAMP        — OEP-AAMP-NNNN
+```
 
-## Planned OEPs
+An OEP targets exactly one protocol. A change needing both is two OEPs that reference
+each other — they will be reviewed by different people, on different schedules, in
+different repositories.
 
-Four are planned, bundling the R1.0 additions. Rationale and sequencing in
-[`../PLAN.md`](../PLAN.md) §5.
+| Directory | Upstream | Verified against |
+| --- | --- | --- |
+| [`adcp/`](adcp/) | `adcontextprotocol/adcp` | 3.2.0-beta.8 |
+| [`aamp/`](aamp/) | `IABTechLab/*` | OpenDirect 2.1, OpenRTB 2.6 |
 
-| OEP | Title | Bundles | Target |
-| --- | --- | --- | --- |
-| 0001 | OOH product & offer shape | ADD-001, ADD-002, ADD-004, ADD-006 | AdCP Media Buy + Creative |
-| 0002 | Briefs and offers in planning terms | ADD-015, ADD-005, ADD-012 | AdCP Media Buy + AAMP Agentic Direct |
-| 0003 | Creative approval as a gated lifecycle | ADD-008, ADD-009, ADD-010 | AdCP Creative |
-| 0004 | Orders and commercial prerequisites | ADD-014, ADD-013, ADD-011 | AAMP Agentic Direct |
+## Status
 
-None can be written yet: the blockers in [`../PLAN.md`](../PLAN.md) §6 must clear first —
-in particular, every placement is still unverified against the current upstream
-revisions, and OEP-0003 needs the Creative Pre-Approval API's rejection reason codes
-([`../analysis/open-gaps.md`](../analysis/open-gaps.md) §1).
+**No OEP has been written yet.** Verification
+([`../verification/`](../verification/)) substantially changed what should be proposed:
+four of the sixteen additions turned out to be already satisfied upstream, and eight
+more only partially unmet. The planned lists in
+[`adcp/README.md`](adcp/README.md) and [`aamp/README.md`](aamp/README.md) reflect the
+corrected picture — **confirmed gaps first**.
+
+## Rules
+
+- One OEP per coherent change, to one protocol. If it needs two independent decisions,
+  split it.
+- Copy [`TEMPLATE.md`](TEMPLATE.md) into the target protocol's directory as
+  `OEP-<PROTO>-NNNN-slug.md`, taking the next free number **for that protocol**.
+- An OEP must cite the `ADD-NNN@version` additions it carries, and the `R-*`
+  requirement IDs from [`../ooh-specifics/`](../ooh-specifics/) that it satisfies.
+- An OEP must name the target surface **and the revision it was written against**.
+  Verification found R1.0's assumptions wrong often enough that this is not optional.
+- An OEP must state what already exists upstream and why it is insufficient. A proposal
+  that re-proposes an existing field will be rejected, and rightly.
+- An OEP is not a discussion thread. Discussion happens in the pull request; the
+  document records the decision.
+
+## Status values
+
+| Status | Meaning |
+| --- | --- |
+| `draft` | Being written; not ready for review |
+| `review` | Open for review in this repository |
+| `ready` | Agreed here, ready to submit upstream |
+| `submitted` | Filed upstream — link the issue/PR |
+| `accepted` | Adopted upstream |
+| `rejected` | Declined or withdrawn — keep the document and record why |
+| `superseded` | Replaced by a later OEP — link it |

@@ -1,7 +1,7 @@
 ---
 id: ADD-015
 title: OOH Planning Metrics in Briefs and Offers
-version: 0.1.0
+version: 0.2.0
 status: draft
 since: R1.0
 supersedes: []
@@ -12,11 +12,30 @@ targets:
   aamp: [agentic-direct, agentic-audiences]
 applies_to: [io, programmatic]
 target_revision_checked: 2026-08-27
+protocol_ownership:
+  owner: adcp
+  secondary: [aamp]
+upstream_status: partial
+verified_against:
+  adcp: 3.2.0-beta.8
+  aamp: "agentic-direct/OpenDirect-2.1; ARTF/OpenRTB-2.6"
+  date: 2026-08-27
 ---
 
 # ADD-015 — OOH Planning Metrics in Briefs and Offers
 
-> Version 0.1.0 · Status: `draft` · Since `R1.0`
+> Version 0.2.0 · Status: `draft` · Since `R1.0`
+>
+> **Protocol owner: AdCP** · also binds into AAMP
+>
+> 🟡 **Verified partially exists upstream** against AdCP 3.2.0-beta.8 and AAMP (OpenDirect 2.1 / OpenRTB 2.6) on 2026-08-27.
+
+## Verification
+
+`flat-rate-option.DoohParameters` already carries `sov_percentage`, `loop_duration_seconds` and `min_plays_per_hour`; `cpp-option` covers cost per point. Unmet: planning metrics as **brief targets**, and `unmet_brief_targets` on an offer.
+
+Full evidence: [`../verification/verdicts.md`](../../verification/verdicts.md) · [`../verification/adcp-3.2.md`](../../verification/adcp-3.2.md) · [`../verification/aamp.md`](../../verification/aamp.md)
+
 
 ## Problem
 
@@ -149,7 +168,7 @@ the period, or taking the shortfall to a human.
       German OOH practice suggests the former, but it is not defined in the document.
 - [ ] Which German currency should GRP be computed against, and how is the target group
       expressed? Ties into
-      [`../docs/measurement-currencies.md`](../docs/measurement-currencies.md).
+      [`../docs/measurement-currencies.md`](../../docs/measurement-currencies.md).
 - [ ] Is SOV by slot count or by time the more common trading basis? Both exist; the
       protocol must carry the basis either way.
 - [ ] Should these metrics be OOH-specific, or generalised for all reach-and-frequency
@@ -170,4 +189,5 @@ the period, or taking the shortfall to a human.
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 0.2.0 | 2026-08-27 | Verified against AdCP 3.2.0-beta.8 and AAMP; added protocol ownership and upstream status |
 | 0.1.0 | 2026-08-27 | Initial draft from Ströer PPV v6 best-practice analysis |
