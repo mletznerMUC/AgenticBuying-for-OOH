@@ -1,8 +1,8 @@
 ---
 id: ADD-005
 title: Location Disclosure Tiers
-version: 0.2.0
-status: draft
+version: 0.2.1
+status: review
 since: R1.0
 supersedes: []
 superseded_by: null
@@ -24,7 +24,7 @@ verified_against:
 
 # ADD-005 — Location Disclosure Tiers
 
-> Version 0.2.0 · Status: `draft` · Since `R1.0`
+> Version 0.2.1 · Status: `review` · Since `R1.0`
 >
 > **Protocol owner: AdCP** · also binds into AAMP
 >
@@ -172,5 +172,6 @@ determine that mechanically instead of discovering it after the campaign.
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 0.2.1 | 2026-08-27 | Promoted to `review`; developed into OEP-ADCP-0001 |
 | 0.2.0 | 2026-08-27 | Verified against AdCP 3.2.0-beta.8 and AAMP; added protocol ownership and upstream status |
 | 0.1.0 | 2026-08-27 | Initial draft from Ströer PPV v6 analysis |

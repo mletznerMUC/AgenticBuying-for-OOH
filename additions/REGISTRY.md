@@ -27,15 +27,15 @@ checked 2026-08-27 against AdCP **3.2.0-beta.8** and AAMP
 | --- | --- | --- | --- | :-: | --- |
 | [ADD-002](adcp/ADD-002-play-chain-and-player-model.md) | Play Chain and Master/Slave Player Model | 0.2.0 | `draft` | 🟡 partial | AAMP |
 | [ADD-003](adcp/ADD-003-delayed-play-confirmation.md) | Delayed Play Confirmation and Settlement Latency | 0.2.0 | `draft` | 🟡 partial | AAMP |
-| [ADD-005](adcp/ADD-005-location-disclosure-tiers.md) | Location Disclosure Tiers | 0.2.0 | `draft` | 🔴 **gap** | AAMP |
+| [ADD-005](adcp/ADD-005-location-disclosure-tiers.md) | Location Disclosure Tiers | 0.2.1 | `review` | 🔴 **gap** | AAMP |
 | [ADD-006](adcp/ADD-006-creative-format-constraints.md) | Creative Format Constraints and Landlord Media-Type Restrictions | 0.2.0 | `draft` | 🟡 partial | AAMP |
 | [ADD-007](adcp/ADD-007-synchronised-multi-screen-delivery.md) | Synchronised Multi-Screen Delivery (Sync Groups) | 0.2.0 | `draft` | 🟢 exists | — |
 | [ADD-008](adcp/ADD-008-creative-approval-lifecycle.md) | Creative Approval Lifecycle and SLA | 0.2.0 | `draft` | 🟡 partial | AAMP |
-| [ADD-009](adcp/ADD-009-creative-integrity-and-caching.md) | Creative Integrity and Caching | 0.2.0 | `draft` | 🔴 **gap** | — |
+| [ADD-009](adcp/ADD-009-creative-integrity-and-caching.md) | Creative Integrity and Caching | 0.2.1 | `review` | 🔴 **gap** | — |
 | [ADD-010](adcp/ADD-010-dynamic-creative-authorisation.md) | Dynamic Creative Authorisation | 0.2.0 | `draft` | 🟡 partial | AAMP |
 | [ADD-011](adcp/ADD-011-compliance-declarations.md) | Compliance Declarations and Youth Protection | 0.2.0 | `draft` | 🟡 partial | AAMP |
-| [ADD-012](adcp/ADD-012-advertiser-loop-separation.md) | Advertiser Loop Separation | 0.2.0 | `draft` | 🔴 **gap** | AAMP |
-| [ADD-013](adcp/ADD-013-deal-access-and-response-obligation.md) | Deal Access and Guaranteed Response Obligation | 0.2.0 | `draft` | 🔴 **gap** | AAMP |
+| [ADD-012](adcp/ADD-012-advertiser-loop-separation.md) | Advertiser Loop Separation | 0.2.1 | `review` | 🔴 **gap** | AAMP |
+| [ADD-013](adcp/ADD-013-deal-access-and-response-obligation.md) | Deal Access and Guaranteed Response Obligation | 0.2.1 | `review` | 🔴 **gap** | AAMP |
 | [ADD-015](adcp/ADD-015-ooh-planning-metrics.md) | OOH Planning Metrics in Briefs and Offers | 0.2.0 | `draft` | 🟡 partial | AAMP |
 | [ADD-016](adcp/ADD-016-seller-conformance-profile.md) | Seller Conformance Profile and Capability Discovery | 0.2.0 | `draft` | 🟡 partial | AAMP |
 
@@ -56,7 +56,7 @@ agent-facing product and offer layer is newer.
 
 | Bucket | Additions | What to do |
 | --- | --- | --- |
-| 🔴 **Confirmed gaps** | ADD-005, ADD-009, ADD-012, ADD-013 | Propose upstream. Nobody has solved these. |
+| 🔴 **Confirmed gaps** | ADD-005, ADD-009, ADD-012, ADD-013 | ✅ **Proposals written** — [`../proposals/adcp/`](../proposals/adcp/). All four now `review`. |
 | 🟡 Partial | ADD-002, 003, 006, 008, 010, 011, 015, 016 | Narrow, specific asks against existing objects |
 | 🟢 Exists | ADD-001, ADD-004, ADD-007, ADD-014 | Conformance and migration guidance, not proposals |
 

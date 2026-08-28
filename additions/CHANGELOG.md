@@ -5,7 +5,20 @@ section. See [`../VERSIONING.md`](../VERSIONING.md) for the scheme.
 
 ## Unreleased
 
-Nothing yet.
+Proposals written for all four confirmed gaps —
+[`../proposals/adcp/`](../proposals/adcp/). ADD-005, ADD-009, ADD-012 and ADD-013
+promoted to `review` at `0.2.1`. Not yet cut as a release; the next manifest will pin
+them.
+
+| Addition | Proposal |
+| --- | --- |
+| ADD-005 | OEP-ADCP-0001 Location disclosure tiers |
+| ADD-012 | OEP-ADCP-0002 Advertiser separation and capacity caps |
+| ADD-013 (+ ADD-014 residue) | OEP-ADCP-0003 Buyer eligibility and response obligations |
+| ADD-009 | OEP-ADCP-0004 Creative integrity policy |
+
+All four propose **core** AdCP changes rather than an `ext.ooh` namespace, on the
+grounds that each describes a problem that also exists outside OOH.
 
 ## R1.1 — 2026-08-27
 

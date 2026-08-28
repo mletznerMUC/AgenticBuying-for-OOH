@@ -59,6 +59,10 @@ Both specifications have been cloned and read — AdCP **3.2.0-beta.8**, AAMP vi
 | 🟡 partial | 8 | The ask shrinks to a specific field or enum value |
 | 🔴 **confirmed gap** | **4** | **Propose upstream — nobody has solved these** |
 
+**Proposals for all four confirmed gaps are written** —
+[`proposals/adcp/`](proposals/adcp/) 0001–0004, all proposing core AdCP changes rather
+than an OOH extension namespace.
+
 The four confirmed gaps are [ADD-005](additions/adcp/ADD-005-location-disclosure-tiers.md)
 (location disclosure tiers),
 [ADD-009](additions/adcp/ADD-009-creative-integrity-and-caching.md) (creative
@@ -232,7 +236,8 @@ citing any task, field or version.
 - [x] Settle the AdCP extension strategy — AdCP has a versioned `ext.{namespace}` mechanism
 - [ ] Fill in the ten `ooh-specifics/` documents with concrete requirements
 - [ ] Complete the `mapping/` documents, one target surface at a time
-- [ ] Write the confirmed-gap OEPs first ([`PLAN.md`](PLAN.md) §5a)
+- [x] Write the confirmed-gap OEPs → [`proposals/adcp/`](proposals/adcp/) (0001–0004)
+- [ ] Review the four gap proposals internally, then take the first upstream
 - [ ] Publish the OpenRTB 2.5 → 2.6 migration notes for DOOH sellers
 - [ ] Draft JSON Schemas in `schemas/` for the accepted OEPs
 - [ ] Add a second media owner's standards, to separate universal additions from Ströer-specific ones
