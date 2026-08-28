@@ -1,4 +1,4 @@
-# Standards for Agentic Advertising in OOH
+# Standard extensions for Agentic Advertising in OOH
 
 An open working repository for **OOH- and DOOH-specific standards and standard
 extensions** for the two emerging agentic advertising protocols:
@@ -52,16 +52,64 @@ contributions — is cheaper than retrofitting them later.
 
 ```
 .
+├── PLAN.md                The plan: which additions go where, in what order, and how
+│                          insertion-order buying is served alongside programmatic
+├── VERSIONING.md          How additions, releases and protocol pins are versioned
+├── analysis/              Analysis of real media-owner integration standards
+├── additions/             THE VERSIONED CORE — one file per extension unit
+│   └── releases/          Frozen manifests pinning addition versions
 ├── docs/                  Background reading: glossary, OOH primer, measurement currencies
 ├── ooh-specifics/         WHAT is specific to OOH — the requirements catalogue
 ├── mapping/               WHERE it belongs in the existing protocols
 │   ├── adcp/              Per AdCP domain: Media Buy, Creative, Signals, ...
 │   └── aamp/              Per AAMP component: ARTF, Agentic Audiences, Agentic Direct, ...
 ├── proposals/             OOH Extension Proposals (OEPs) — the deliverables to the WGs
-└── schemas/               JSON Schema drafts backing the proposals
+├── schemas/               JSON Schema drafts backing the proposals
+└── scripts/               validate.py — registry, version and link consistency checks
 ```
 
 Every directory has its own `README.md` explaining its scope and current status.
+
+## Start here
+
+| If you want to... | Read |
+| --- | --- |
+| Understand the plan and what we ask AdCP/AAMP for | [`PLAN.md`](PLAN.md) |
+| See the versioned extension units | [`additions/REGISTRY.md`](additions/REGISTRY.md) |
+| See where the evidence comes from | [`analysis/`](analysis/) |
+| Understand how versions work | [`VERSIONING.md`](VERSIONING.md) |
+
+## Additions — the versioned core
+
+An **addition** is one normative extension unit: a single OOH concept, defined
+independently of any transport, bound to both a **programmatic** and an
+**insertion-order** representation, with a proposed placement in AdCP and AAMP.
+
+Release **R1.0** contains 16 additions, derived from analysis of Ströer's production
+DOOH integration standards. Index: [`additions/REGISTRY.md`](additions/REGISTRY.md).
+Manifest: [`additions/releases/R1.0.md`](additions/releases/R1.0.md).
+
+Every addition carries three layers, and the middle one is the reason the whole
+exercise exists:
+
+```
+   SEMANTIC DEFINITION  ── transport-neutral. What the concept IS.
+        │            │
+        ▼            ▼
+  PROGRAMMATIC     OFFER / IO BINDING
+  BINDING          What a buyer agent reads when it sends a brief —
+  (RTB today)      before any bid request exists.
+```
+
+Media owners have been forced to encode every OOH-specific concept **inside the
+programmatic transport**: as an OpenRTB extension, a VAST macro, a synthetic domain
+name, or a token inside a file name. A buyer agent that has not yet bid can discover
+none of it — and none of it is reusable for insertion-order buying, which is where most
+OOH money still sits. Each addition therefore lifts the concept out of the transport,
+then binds it back down to both paths.
+
+Everything is versioned per addition, with frozen release manifests, because these
+standards will expand — see [`VERSIONING.md`](VERSIONING.md).
 
 ## The OOH specifica at a glance
 
@@ -105,13 +153,18 @@ against the current spec revisions is the next work package.
 | Buyer/Seller/Registry Agents | Media-owner and screen-network discovery and capability advertisement |
 | Trust & Transparency | Playout-log integrity, verified vs modelled delivery, discrepancy handling |
 
-See [`mapping/`](mapping/) for the per-surface breakdowns.
+For the coarse view above, see [`mapping/`](mapping/). For the actual placement
+decisions — which protocol owns what, in what order, and with which additions bundled
+into which submission — see [`PLAN.md`](PLAN.md).
 
 ## Status
 
-**Early scaffolding.** This repository currently contains structure, scope and
-open questions — no normative text yet. Nothing here has been submitted to, or
-endorsed by, the AdCP or AAMP projects.
+**Early.** Release R1.0 of the additions is published, and all 16 additions are at
+`0.1.0` / `draft` — the analysis is complete, but **nothing has been verified against a
+current AdCP or AAMP revision and nothing should be implemented yet.** The
+`ooh-specifics/` and `mapping/` documents remain outlines.
+
+Nothing here has been submitted to, or endorsed by, the AdCP or AAMP projects.
 
 Protocol facts in this repository were last checked against public sources in
 **August 2026** (AdCP published Oct 2025; AAMP named Feb 2026, published Mar 2026,
@@ -120,12 +173,19 @@ citing any task, field or version.
 
 ## Roadmap
 
+- [x] Analyse a real media owner's DSP integration standards → [`analysis/`](analysis/)
+- [x] Turn the findings into versioned additions → [`additions/`](additions/) release R1.0
+- [x] Set up versioning for additions, releases and protocol pins → [`VERSIONING.md`](VERSIONING.md)
+- [x] Produce the placement plan, covering insertion-order as well as programmatic → [`PLAN.md`](PLAN.md)
+- [ ] **Verify AdCP and AAMP surface names, tasks and schemas against the current revisions** — every R1 placement is unverified
+- [ ] Retrieve the two blocked source specifications ([`analysis/open-gaps.md`](analysis/open-gaps.md) §1)
+- [ ] Settle the AdCP extension strategy with the maintainers ([`PLAN.md`](PLAN.md) §1)
 - [ ] Fill in the ten `ooh-specifics/` documents with concrete requirements
-- [ ] Verify AdCP and AAMP surface names, tasks and schemas against the current revisions
 - [ ] Complete the `mapping/` documents, one target surface at a time
-- [ ] Write the first OEPs (likely: OOH product shape, geospatial/venue targeting, proof of play)
+- [ ] Write the four planned OEPs ([`PLAN.md`](PLAN.md) §5)
 - [ ] Draft JSON Schemas in `schemas/` for the accepted OEPs
-- [ ] Take the first OEP to the AdCP and AAMP working groups
+- [ ] Add a second media owner's standards, to separate universal additions from Ströer-specific ones
+- [ ] Cover classic/static OOH, absent from R1 entirely
 
 ## Contributing
 

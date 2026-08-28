@@ -24,9 +24,13 @@ From [`../../ooh-specifics/`](../../ooh-specifics/): 01 Inventory, 02 Trading,
 
 ## Mapping table
 
-| Requirement | Target | Change type | Rationale | Confidence |
-| --- | --- | --- | --- | --- |
-| *TBD* | | | | |
+`P` = this surface is the addition's primary home (define the semantic here); `S` = secondary binding. Roles are from [`../../PLAN.md`](../../PLAN.md) §3. Target and change type are filled in once this surface is verified against the current upstream revision — see [`../../PLAN.md`](../../PLAN.md) §6.
+
+| Addition (R1.0) | Role | Target | Change type | Confidence |
+| --- | :-: | --- | --- | --- |
+| [ADD-016](../../additions/ADD-016-seller-conformance-profile.md) · Seller conformance profile | `P` | | | unverified |
+| [ADD-004](../../additions/ADD-004-venue-and-network-taxonomy.md) · Venue & network taxonomy | `S` | | | unverified |
+| [ADD-014](../../additions/ADD-014-accreditation-io-and-settlement.md) · Accreditation, IO & settlement | `S` | | | unverified |
 
 ## Open questions
 

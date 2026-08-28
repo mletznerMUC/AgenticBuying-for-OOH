@@ -23,9 +23,13 @@ parts of 04 Targeting.
 
 ## Mapping table
 
-| Requirement | Target | Change type | Rationale | Confidence |
-| --- | --- | --- | --- | --- |
-| *TBD* | | | | |
+**No R1.0 addition targets this surface.** The analysis in [`../../analysis/`](../../analysis/) found nothing in a production DOOH integration that maps to serve-time identity or context matching — consistent with OOH being non-addressable.
+
+The one candidate is an explicit *non-addressable* capability declaration, so that buyer agents stop attempting identity operations against OOH inventory. That has not been written as an addition because it is not yet clear whether it belongs here, in Media Buy product metadata, or as a protocol-wide capability.
+
+| Addition | Role | Target | Change type | Confidence |
+| --- | :-: | --- | --- | --- |
+| *none in R1.0* | | | | |
 
 ## Open questions
 

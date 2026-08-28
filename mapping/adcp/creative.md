@@ -23,9 +23,16 @@ From [`../../ooh-specifics/`](../../ooh-specifics/): 05 Creative & formats, part
 
 ## Mapping table
 
-| Requirement | Target | Change type | Rationale | Confidence |
-| --- | --- | --- | --- | --- |
-| *TBD* | | | | |
+`P` = this surface is the addition's primary home (define the semantic here); `S` = secondary binding. Roles are from [`../../PLAN.md`](../../PLAN.md) §3. Target and change type are filled in once this surface is verified against the current upstream revision — see [`../../PLAN.md`](../../PLAN.md) §6.
+
+| Addition (R1.0) | Role | Target | Change type | Confidence |
+| --- | :-: | --- | --- | --- |
+| [ADD-006](../../additions/ADD-006-creative-format-constraints.md) · Creative format constraints | `P` | | | unverified |
+| [ADD-007](../../additions/ADD-007-synchronised-multi-screen-delivery.md) · Sync groups | `P` | | | unverified |
+| [ADD-008](../../additions/ADD-008-creative-approval-lifecycle.md) · Creative approval lifecycle | `P` | | | unverified |
+| [ADD-009](../../additions/ADD-009-creative-integrity-and-caching.md) · Creative integrity & caching | `P` | | | unverified |
+| [ADD-010](../../additions/ADD-010-dynamic-creative-authorisation.md) · Dynamic creative authorisation | `P` | | | unverified |
+| [ADD-011](../../additions/ADD-011-compliance-declarations.md) · Compliance declarations | `S` | | | unverified |
 
 ## Open questions
 

@@ -26,9 +26,12 @@ From [`../../ooh-specifics/`](../../ooh-specifics/): 03 Audience & measurement,
 
 ## Mapping table
 
-| Requirement | Target | Change type | Rationale | Confidence |
-| --- | --- | --- | --- | --- |
-| *TBD* | | | | |
+`P` = this surface is the addition's primary home (define the semantic here); `S` = secondary binding. Roles are from [`../../PLAN.md`](../../PLAN.md) §3. Target and change type are filled in once this surface is verified against the current upstream revision — see [`../../PLAN.md`](../../PLAN.md) §6.
+
+| Addition (R1.0) | Role | Target | Change type | Confidence |
+| --- | :-: | --- | --- | --- |
+| [ADD-001](../../additions/ADD-001-total-audience-impressions.md) · Total Audience Impressions | `S` | | | unverified |
+| [ADD-015](../../additions/ADD-015-ooh-planning-metrics.md) · OOH planning metrics | `S` | | | unverified |
 
 ## Open questions
 
