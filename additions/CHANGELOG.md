@@ -5,7 +5,59 @@ section. See [`../VERSIONING.md`](../VERSIONING.md) for the scheme.
 
 ## Unreleased
 
-Nothing yet.
+Proposals written for all four confirmed gaps —
+[`../proposals/adcp/`](../proposals/adcp/). ADD-005, ADD-009, ADD-012 and ADD-013
+promoted to `review` at `0.2.1`. Not yet cut as a release; the next manifest will pin
+them.
+
+| Addition | Proposal |
+| --- | --- |
+| ADD-005 | OEP-ADCP-0001 Location disclosure tiers |
+| ADD-012 | OEP-ADCP-0002 Advertiser separation and capacity caps |
+| ADD-013 (+ ADD-014 residue) | OEP-ADCP-0003 Buyer eligibility and response obligations |
+| ADD-009 | OEP-ADCP-0004 Creative integrity policy |
+
+All four propose **core** AdCP changes rather than an `ext.ooh` namespace, on the
+grounds that each describes a problem that also exists outside OOH.
+
+## R1.1 — 2026-08-27
+
+All sixteen additions verified against the actual specifications and bumped to
+`0.2.0`. No requirement changed, so every bump is MINOR — a re-pin to a verified
+upstream revision plus added metadata.
+
+Manifest: [`releases/R1.1.md`](releases/R1.1.md) · Evidence:
+[`../verification/`](../verification/)
+
+### Changed
+
+- Every addition gains `protocol_ownership` (owner + secondary) and `upstream_status`
+  (`exists` / `partial` / `gap`) front matter, plus a Verification section.
+- Additions moved into directories named for their owning protocol: `adcp/` (13),
+  `aamp/` (3). `scripts/validate.py` now enforces that placement.
+- Proposals reorganised into `proposals/adcp/` and `proposals/aamp/`, with per-protocol
+  OEP numbering.
+
+### Verified
+
+| Verdict | Additions |
+| --- | --- |
+| 🟢 exists upstream | ADD-001, ADD-004, ADD-007, ADD-014 |
+| 🟡 partial | ADD-002, ADD-003, ADD-006, ADD-008, ADD-010, ADD-011, ADD-015, ADD-016 |
+| 🔴 confirmed gap | ADD-005, ADD-009, ADD-012, ADD-013 |
+
+### Corrections to R1.0
+
+- **OpenRTB 2.6 `Imp.Qty` already standardises the DOOH audience multiplier**, with
+  source type and measurement vendor. ADD-001's central proposal was already a standard.
+- **AdCP already specifies creative rejection reason codes** (17 of them). R1.0 called
+  this "the single most important unknown in this release".
+- **AdCP already has `sov_percentage`** in DOOH pricing parameters.
+- **AdCP already covers classic/static OOH** experimentally (`ooh_metrics`,
+  `material_submission`). R1.0 called its absence "the largest gap".
+- **OpenDirect already has Order, Line, ChangeRequest and soft holds.** ADD-014 was
+  described in R1.0 as "probably the most valuable single contribution"; it was already
+  built.
 
 ## R1.0 — 2026-08-27
 

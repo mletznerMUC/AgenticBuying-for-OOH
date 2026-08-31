@@ -13,7 +13,25 @@ normative text under `docs/`, schemas under `static/schemas/source/`.
 | [accounts-and-governance.md](accounts-and-governance.md) | Accounts, Governance | Medium — content restrictions, competitive separation |
 | [trusted-match.md](trusted-match.md) | Trusted Match | Low — OOH is non-addressable |
 
-## Cross-cutting question
+## Cross-cutting question — **resolved**
+
+> **Answered by verification (2026-08-27).** AdCP has a first-class extension
+> mechanism: `extensions/extension-meta.json` defines namespaced extensions at
+> `/schemas/extensions/{namespace}.json`, carrying data at **`ext.{namespace}`**,
+> declaring **`valid_from`** / `valid_until` AdCP versions and a `docs_url`, and
+> **auto-discovered** into versioned schema builds. `core/product.json` has an `ext`
+> field.
+>
+> **Decision: a registered `ooh` namespace for genuinely OOH-only concepts, core
+> changes for the six additions that are not really OOH-specific** (see
+> [`../../PLAN.md`](../../PLAN.md) §1). The mechanism even versions itself in a way that
+> lines up with [`../../VERSIONING.md`](../../VERSIONING.md) §3.
+>
+> Verification also showed the premise was too pessimistic: AdCP already has `dooh` and
+> `ooh` channels, `property-type: dooh`, `dooh_metrics`, an experimental `ooh_metrics`,
+> and `sov_percentage`. OOH is not absent from the core — it is partially there already.
+>
+> The original framing is kept below for the record.
 
 Does OOH belong in AdCP as:
 

@@ -1,7 +1,7 @@
 ---
 id: ADD-016
 title: Seller Conformance Profile and Capability Discovery
-version: 0.1.0
+version: 0.2.0
 status: draft
 since: R1.0
 supersedes: []
@@ -12,11 +12,30 @@ targets:
   aamp: [agent-sdks-and-registry, trust-and-transparency]
 applies_to: [programmatic, io]
 target_revision_checked: 2026-08-27
+protocol_ownership:
+  owner: adcp
+  secondary: [aamp]
+upstream_status: partial
+verified_against:
+  adcp: 3.2.0-beta.8
+  aamp: "agentic-direct/OpenDirect-2.1; ARTF/OpenRTB-2.6"
+  date: 2026-08-27
 ---
 
 # ADD-016 — Seller Conformance Profile and Capability Discovery
 
-> Version 0.1.0 · Status: `draft` · Since `R1.0`
+> Version 0.2.0 · Status: `draft` · Since `R1.0`
+>
+> **Protocol owner: AdCP** · also binds into AAMP
+>
+> 🟡 **Verified partially exists upstream** against AdCP 3.2.0-beta.8 and AAMP (OpenDirect 2.1 / OpenRTB 2.6) on 2026-08-27.
+
+## Verification
+
+`get_adcp_capabilities` exists and already declares measurement methodology. Ask becomes declaring OOH conformance claims inside it. AAMP's registry-agent was **not examined**.
+
+Full evidence: [`../verification/verdicts.md`](../../verification/verdicts.md) · [`../verification/adcp-3.2.md`](../../verification/adcp-3.2.md) · [`../verification/aamp.md`](../../verification/aamp.md)
+
 
 ## Problem
 
@@ -44,7 +63,7 @@ answer.
 
 1. A seller MUST be able to publish a **capability profile**: which additions it
    implements, at which versions, using the conformance claims in
-   [`../VERSIONING.md`](../VERSIONING.md) §4.
+   [`../VERSIONING.md`](../../VERSIONING.md) §4.
 2. A capability profile MUST be retrievable by a buyer agent **before** any transaction
    or contract.
 3. A profile MUST distinguish **implemented**, **partially implemented** (with the
@@ -155,4 +174,5 @@ the buyer to do.
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 0.2.0 | 2026-08-27 | Verified against AdCP 3.2.0-beta.8 and AAMP; added protocol ownership and upstream status |
 | 0.1.0 | 2026-08-27 | Initial draft from Ströer DSP integration plan |

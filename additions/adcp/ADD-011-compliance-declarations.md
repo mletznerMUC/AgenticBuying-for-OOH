@@ -1,7 +1,7 @@
 ---
 id: ADD-011
 title: Compliance Declarations and Youth Protection
-version: 0.1.0
+version: 0.2.0
 status: draft
 since: R1.0
 supersedes: []
@@ -12,11 +12,30 @@ targets:
   aamp: [agentic-direct, trust-and-transparency]
 applies_to: [programmatic, io]
 target_revision_checked: 2026-08-27
+protocol_ownership:
+  owner: adcp
+  secondary: [aamp]
+upstream_status: partial
+verified_against:
+  adcp: 3.2.0-beta.8
+  aamp: "agentic-direct/OpenDirect-2.1; ARTF/OpenRTB-2.6"
+  date: 2026-08-27
 ---
 
 # ADD-011 — Compliance Declarations and Youth Protection
 
-> Version 0.1.0 · Status: `draft` · Since `R1.0`
+> Version 0.2.0 · Status: `draft` · Since `R1.0`
+>
+> **Protocol owner: AdCP** · also binds into AAMP
+>
+> 🟡 **Verified partially exists upstream** against AdCP 3.2.0-beta.8 and AAMP (OpenDirect 2.1 / OpenRTB 2.6) on 2026-08-27.
+
+## Verification
+
+A `compliance/` domain, `enforced_policies`, and age-verification and attestation enums already exist. Unmet: a buyer agent checking its own declaration status before briefing.
+
+Full evidence: [`../verification/verdicts.md`](../../verification/verdicts.md) · [`../verification/adcp-3.2.md`](../../verification/adcp-3.2.md) · [`../verification/aamp.md`](../../verification/aamp.md)
+
 
 ## Problem
 
@@ -86,7 +105,7 @@ From an offer — or before briefing at all — a buyer agent MUST be able to de
 - whether the buyer's principal has them on file, and until when;
 - what each declaration commits the principal to, in referenceable terms;
 - the content constraints that follow (age-restricted categories, proximity rules —
-  see [`../ooh-specifics/08-compliance-and-content-restrictions.md`](../ooh-specifics/08-compliance-and-content-restrictions.md));
+  see [`../ooh-specifics/08-compliance-and-content-restrictions.md`](../../ooh-specifics/08-compliance-and-content-restrictions.md));
 - what it must do to obtain a missing declaration, and how long that takes.
 
 Sketch:
@@ -156,4 +175,5 @@ yet accredited and escalate to a human **before** producing a plan that cannot e
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 0.2.0 | 2026-08-27 | Verified against AdCP 3.2.0-beta.8 and AAMP; added protocol ownership and upstream status |
 | 0.1.0 | 2026-08-27 | Initial draft from Ströer accreditation analysis |

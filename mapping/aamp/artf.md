@@ -30,16 +30,16 @@ From [`../../ooh-specifics/`](../../ooh-specifics/): 01 Inventory, 03 Audience,
 
 | Addition (R1.0) | Role | Target | Change type | Confidence |
 | --- | :-: | --- | --- | --- |
-| [ADD-001](../../additions/ADD-001-total-audience-impressions.md) · Total Audience Impressions | `S` | | | unverified |
-| [ADD-002](../../additions/ADD-002-play-chain-and-player-model.md) · Play chain / player model | `S` | | | unverified |
-| [ADD-003](../../additions/ADD-003-delayed-play-confirmation.md) · Delayed play confirmation | `S` | | | unverified |
-| [ADD-004](../../additions/ADD-004-venue-and-network-taxonomy.md) · Venue & network taxonomy | `S` | | | unverified |
-| [ADD-005](../../additions/ADD-005-location-disclosure-tiers.md) · Location disclosure tiers | `S` | | | unverified |
-| [ADD-006](../../additions/ADD-006-creative-format-constraints.md) · Creative format constraints | `S` | | | unverified |
-| [ADD-007](../../additions/ADD-007-synchronised-multi-screen-delivery.md) · Sync groups | `S` | | | unverified |
-| [ADD-009](../../additions/ADD-009-creative-integrity-and-caching.md) · Creative integrity & caching | `S` | | | unverified |
-| [ADD-012](../../additions/ADD-012-advertiser-loop-separation.md) · Advertiser loop separation | `S` | | | unverified |
-| [ADD-013](../../additions/ADD-013-deal-access-and-response-obligation.md) · Deal access & response obligation | `S` | | | unverified |
+| [ADD-001](../../additions/aamp/ADD-001-total-audience-impressions.md) · Total Audience Impressions | `S` | | | unverified |
+| [ADD-002](../../additions/adcp/ADD-002-play-chain-and-player-model.md) · Play chain / player model | `S` | | | unverified |
+| [ADD-003](../../additions/adcp/ADD-003-delayed-play-confirmation.md) · Delayed play confirmation | `S` | | | unverified |
+| [ADD-004](../../additions/aamp/ADD-004-venue-and-network-taxonomy.md) · Venue & network taxonomy | `S` | | | unverified |
+| [ADD-005](../../additions/adcp/ADD-005-location-disclosure-tiers.md) · Location disclosure tiers | `S` | | | unverified |
+| [ADD-006](../../additions/adcp/ADD-006-creative-format-constraints.md) · Creative format constraints | `S` | | | unverified |
+| [ADD-007](../../additions/adcp/ADD-007-synchronised-multi-screen-delivery.md) · Sync groups | `S` | | | unverified |
+| [ADD-009](../../additions/adcp/ADD-009-creative-integrity-and-caching.md) · Creative integrity & caching | `S` | | | unverified |
+| [ADD-012](../../additions/adcp/ADD-012-advertiser-loop-separation.md) · Advertiser loop separation | `S` | | | unverified |
+| [ADD-013](../../additions/adcp/ADD-013-deal-access-and-response-obligation.md) · Deal access & response obligation | `S` | | | unverified |
 
 ## Open questions
 

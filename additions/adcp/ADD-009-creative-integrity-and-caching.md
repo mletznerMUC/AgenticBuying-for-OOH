@@ -1,8 +1,8 @@
 ---
 id: ADD-009
 title: Creative Integrity and Caching
-version: 0.1.0
-status: draft
+version: 0.2.1
+status: review
 since: R1.0
 supersedes: []
 superseded_by: null
@@ -12,11 +12,30 @@ targets:
   aamp: [artf, trust-and-transparency]
 applies_to: [programmatic, io]
 target_revision_checked: 2026-08-27
+protocol_ownership:
+  owner: adcp
+  secondary: []
+upstream_status: gap
+verified_against:
+  adcp: 3.2.0-beta.8
+  aamp: "agentic-direct/OpenDirect-2.1; ARTF/OpenRTB-2.6"
+  date: 2026-08-27
 ---
 
 # ADD-009 — Creative Integrity and Caching
 
-> Version 0.1.0 · Status: `draft` · Since `R1.0`
+> Version 0.2.1 · Status: `review` · Since `R1.0`
+>
+> **Protocol owner: AdCP**
+>
+> 🔴 **Verified confirmed gap** against AdCP 3.2.0-beta.8 and AAMP (OpenDirect 2.1 / OpenRTB 2.6) on 2026-08-27.
+
+## Verification
+
+**Confirmed absent.** No integrity, caching-authority or asset-swap concept; `content_drift` concerns landing pages, not media files. Cheap to fix: one policy object plus one reason-code value.
+
+Full evidence: [`../verification/verdicts.md`](../../verification/verdicts.md) · [`../verification/adcp-3.2.md`](../../verification/adcp-3.2.md) · [`../verification/aamp.md`](../../verification/aamp.md)
+
 
 ## Problem
 
@@ -140,4 +159,6 @@ happens if I need to change one mid-flight? Today that is an e-mail to operation
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 0.2.1 | 2026-08-27 | Promoted to `review`; developed into OEP-ADCP-0004 |
+| 0.2.0 | 2026-08-27 | Verified against AdCP 3.2.0-beta.8 and AAMP; added protocol ownership and upstream status |
 | 0.1.0 | 2026-08-27 | Initial draft from Ströer Creative Approval analysis |

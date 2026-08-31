@@ -9,6 +9,25 @@ Additions are the versioned core of this repository. See
 [`../VERSIONING.md`](../VERSIONING.md) for the scheme, and
 [`REGISTRY.md`](REGISTRY.md) for the index.
 
+## Organised by owning protocol
+
+```
+additions/
+├── adcp/        13 additions whose definition belongs in AdCP
+├── aamp/         3 additions whose definition belongs in AAMP
+└── releases/     Frozen manifests
+```
+
+The directory names the protocol that owns the **definition**. Most additions still
+bind into both protocols — the `protocol_ownership` front matter names the secondary
+bindings, and each addition's Proposed placement table gives the per-surface detail.
+
+`scripts/validate.py` enforces the placement: an addition whose `owner` disagrees with
+its directory is an error, so the structure cannot silently drift.
+
+Every addition also declares `upstream_status` — 🟢 `exists`, 🟡 `partial` or
+🔴 `gap` — from [`../verification/verdicts.md`](../verification/verdicts.md).
+
 ## Where additions come from
 
 Release R1 is derived entirely from analysis of Ströer's production DSP integration
@@ -85,8 +104,10 @@ Every addition file has the same sections:
 
 ## Adding a new addition
 
-1. Copy [`TEMPLATE.md`](TEMPLATE.md) to `ADD-NNN-slug.md` with the next free ID.
-2. Fill in the front matter — `version: 0.1.0`, `status: draft`.
+1. Copy [`TEMPLATE.md`](TEMPLATE.md) to `<owner>/ADD-NNN-slug.md` with the next free
+   ID, in the directory of the protocol that owns the definition.
+2. Fill in the front matter — `version: 0.1.0`, `status: draft`, `protocol_ownership`,
+   `upstream_status`.
 3. Add a row to [`REGISTRY.md`](REGISTRY.md).
 4. Note it in [`CHANGELOG.md`](CHANGELOG.md) under the unreleased heading.
 5. It joins a release only when a release manifest pins it.

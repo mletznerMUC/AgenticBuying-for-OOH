@@ -48,6 +48,44 @@ contributions — is cheaper than retrofitting them later.
    can hand to the AdCP and AAMP working groups, with schema drafts.
    → [`proposals/`](proposals/) and [`schemas/`](schemas/)
 
+## What is already in the protocols
+
+Both specifications have been cloned and read — AdCP **3.2.0-beta.8**, AAMP via
+**OpenDirect 2.1** and **OpenRTB 2.6**. The result reorders the work:
+
+| Verdict | Additions | Meaning |
+| --- | :-: | --- |
+| 🟢 exists upstream | 4 | Conformance and migration guidance, not proposals |
+| 🟡 partial | 8 | The ask shrinks to a specific field or enum value |
+| 🔴 **confirmed gap** | **4** | **Propose upstream — nobody has solved these** |
+
+**Proposals for all four confirmed gaps are written** —
+[`proposals/adcp/`](proposals/adcp/) 0001–0004, all proposing core AdCP changes rather
+than an OOH extension namespace.
+
+The four confirmed gaps are [ADD-005](additions/adcp/ADD-005-location-disclosure-tiers.md)
+(location disclosure tiers),
+[ADD-009](additions/adcp/ADD-009-creative-integrity-and-caching.md) (creative
+integrity), [ADD-012](additions/adcp/ADD-012-advertiser-loop-separation.md) (loop
+separation caps) and
+[ADD-013](additions/adcp/ADD-013-deal-access-and-response-obligation.md) (buyer
+eligibility) — all owned by AdCP.
+
+Highlights of what already exists, and which R1.0 wrongly proposed to invent:
+
+- **OpenRTB 2.6 `Imp.Qty`** already standardises the DOOH audience multiplier, with
+  source type and measurement vendor. Ströer's `imp.ext.totalaud` is a pre-2.6
+  workaround, not a standards gap.
+- **OpenRTB 2.6 has a `Dooh` object** with `venuetype`/`venuetypetax`, defaulting to the
+  OpenOOH taxonomy.
+- **AdCP has `dooh` and `ooh` channels**, `dooh_metrics`, an experimental `ooh_metrics`
+  for classic OOH, `sov_percentage` in DOOH pricing, a creative approval state machine
+  and a 17-value rejection reason-code taxonomy.
+- **OpenDirect v2.1 has Order, Line, ChangeRequest** and soft holds
+  (`reservedexpirydate`).
+
+Details and evidence: [`verification/`](verification/).
+
 ## Repository layout
 
 ```
@@ -56,7 +94,10 @@ contributions — is cheaper than retrofitting them later.
 │                          insertion-order buying is served alongside programmatic
 ├── VERSIONING.md          How additions, releases and protocol pins are versioned
 ├── analysis/              Analysis of real media-owner integration standards
+├── verification/          The additions checked against the ACTUAL specifications
 ├── additions/             THE VERSIONED CORE — one file per extension unit
+│   ├── adcp/              13 additions whose definition belongs in AdCP
+│   ├── aamp/               3 additions whose definition belongs in AAMP
 │   └── releases/          Frozen manifests pinning addition versions
 ├── docs/                  Background reading: glossary, OOH primer, measurement currencies
 ├── ooh-specifics/         WHAT is specific to OOH — the requirements catalogue
@@ -64,6 +105,8 @@ contributions — is cheaper than retrofitting them later.
 │   ├── adcp/              Per AdCP domain: Media Buy, Creative, Signals, ...
 │   └── aamp/              Per AAMP component: ARTF, Agentic Audiences, Agentic Direct, ...
 ├── proposals/             OOH Extension Proposals (OEPs) — the deliverables to the WGs
+│   ├── adcp/              OEP-ADCP-NNNN
+│   └── aamp/              OEP-AAMP-NNNN
 ├── schemas/               JSON Schema drafts backing the proposals
 └── scripts/               validate.py — registry, version and link consistency checks
 ```
@@ -74,6 +117,7 @@ Every directory has its own `README.md` explaining its scope and current status.
 
 | If you want to... | Read |
 | --- | --- |
+| Know what is already in AdCP/AAMP and what is genuinely missing | [`verification/verdicts.md`](verification/verdicts.md) |
 | Understand the plan and what we ask AdCP/AAMP for | [`PLAN.md`](PLAN.md) |
 | See the versioned extension units | [`additions/REGISTRY.md`](additions/REGISTRY.md) |
 | See where the evidence comes from | [`analysis/`](analysis/) |
@@ -85,9 +129,15 @@ An **addition** is one normative extension unit: a single OOH concept, defined
 independently of any transport, bound to both a **programmatic** and an
 **insertion-order** representation, with a proposed placement in AdCP and AAMP.
 
-Release **R1.0** contains 16 additions, derived from analysis of Ströer's production
-DOOH integration standards. Index: [`additions/REGISTRY.md`](additions/REGISTRY.md).
-Manifest: [`additions/releases/R1.0.md`](additions/releases/R1.0.md).
+Release **R1.1** contains 16 additions, derived from analysis of Ströer's production
+DOOH integration standards and verified against the upstream specifications. Index:
+[`additions/REGISTRY.md`](additions/REGISTRY.md). Manifest:
+[`additions/releases/R1.1.md`](additions/releases/R1.1.md).
+
+**Additions are filed under the protocol that owns their definition** —
+`additions/adcp/` or `additions/aamp/` — and each declares its secondary bindings and
+its upstream status (🟢 `exists` / 🟡 `partial` / 🔴 `gap`). `scripts/validate.py`
+enforces that an addition sits in its owner's directory, so the structure cannot drift.
 
 Every addition carries three layers, and the middle one is the reason the whole
 exercise exists:
@@ -159,10 +209,11 @@ into which submission — see [`PLAN.md`](PLAN.md).
 
 ## Status
 
-**Early.** Release R1.0 of the additions is published, and all 16 additions are at
-`0.1.0` / `draft` — the analysis is complete, but **nothing has been verified against a
-current AdCP or AAMP revision and nothing should be implemented yet.** The
-`ooh-specifics/` and `mapping/` documents remain outlines.
+**Early.** Release R1.1 is published: 16 additions at `0.2.0`, all still `draft`.
+Placements have now been **verified against the actual specifications**, but nothing has
+been reviewed outside this repository and **nothing should be implemented yet**. The
+`ooh-specifics/` and `mapping/` documents remain outlines, and two `ooh-specifics/`
+claims are known to be contradicted by verification.
 
 Nothing here has been submitted to, or endorsed by, the AdCP or AAMP projects.
 
@@ -177,12 +228,17 @@ citing any task, field or version.
 - [x] Turn the findings into versioned additions → [`additions/`](additions/) release R1.0
 - [x] Set up versioning for additions, releases and protocol pins → [`VERSIONING.md`](VERSIONING.md)
 - [x] Produce the placement plan, covering insertion-order as well as programmatic → [`PLAN.md`](PLAN.md)
-- [ ] **Verify AdCP and AAMP surface names, tasks and schemas against the current revisions** — every R1 placement is unverified
+- [x] Verify AdCP and AAMP surfaces against the current revisions → [`verification/`](verification/)
+- [x] Structure additions and proposals by owning protocol, enforced by `scripts/validate.py`
+- [ ] **Read the DP-AA DOOH Extension** — prior art for anything proposed to AAMP Agentic Direct
+- [ ] Examine the four unexamined AAMP repositories
 - [ ] Retrieve the two blocked source specifications ([`analysis/open-gaps.md`](analysis/open-gaps.md) §1)
-- [ ] Settle the AdCP extension strategy with the maintainers ([`PLAN.md`](PLAN.md) §1)
+- [x] Settle the AdCP extension strategy — AdCP has a versioned `ext.{namespace}` mechanism
 - [ ] Fill in the ten `ooh-specifics/` documents with concrete requirements
 - [ ] Complete the `mapping/` documents, one target surface at a time
-- [ ] Write the four planned OEPs ([`PLAN.md`](PLAN.md) §5)
+- [x] Write the confirmed-gap OEPs → [`proposals/adcp/`](proposals/adcp/) (0001–0004)
+- [ ] Review the four gap proposals internally, then take the first upstream
+- [ ] Publish the OpenRTB 2.5 → 2.6 migration notes for DOOH sellers
 - [ ] Draft JSON Schemas in `schemas/` for the accepted OEPs
 - [ ] Add a second media owner's standards, to separate universal additions from Ströer-specific ones
 - [ ] Cover classic/static OOH, absent from R1 entirely

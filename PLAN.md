@@ -4,6 +4,28 @@ Scope: release **R1.0** (16 additions, see [`additions/REGISTRY.md`](additions/R
 Derived from analysis of Ströer's production DOOH integration standards
 ([`analysis/`](analysis/)).
 
+> ## ⚠️ Revised after verification — 2026-08-27
+>
+> This plan was written against **public summaries** of AdCP and AAMP. Both
+> specifications have since been read directly
+> ([`verification/`](verification/)), and the findings change it substantially:
+>
+> - **§1's extension-strategy question is settled.** AdCP has a first-class, versioned
+>   `ext.{namespace}` mechanism. Ship a registered `ooh` namespace for OOH-only
+>   concepts; take the rest to core.
+> - **§1's division of labour is wrong.** AdCP Media Buy already owns the negotiation
+>   flow (`request_proposals`, `refine_proposals`, `accept_proposal`,
+>   `commercial-terms`). It is not AAMP Agentic Direct's exclusively.
+> - **§2's waves are wrong.** Wave 1 was "describe the inventory" — but the inventory
+>   description largely exists. The confirmed **gaps** come first now.
+> - **§5's four OEPs are superseded** by the per-protocol lists in
+>   [`proposals/adcp/`](proposals/adcp/) and [`proposals/aamp/`](proposals/aamp/).
+> - **§4's insertion-order analysis stands**, and is strengthened: `unmet_brief_targets`
+>   is confirmed absent from both protocols.
+>
+> §§1–3 and 5 are retained below as the reasoning that led here; read
+> [`verification/verdicts.md`](verification/verdicts.md) for what supersedes them.
+
 This document answers three questions:
 
 1. **Which protocol owns what?** AdCP and AAMP overlap; putting an addition in the wrong
@@ -307,18 +329,68 @@ self-contained and generalises cleanly to any human-reviewed channel, so it is a
 early credibility win. OEP-0002 and OEP-0004 are the valuable, structural ones and should
 go in once the first two have established the working relationship.
 
+## 5a. Revised submissions (supersedes §5)
+
+Verification reordered everything. The foundations R1.0 planned to propose already
+exist; the value is in the four confirmed gaps.
+
+### To AdCP — [`proposals/adcp/`](proposals/adcp/)
+
+| # | Title | Bundles | Verdict |
+| --- | --- | --- | :-: |
+| OEP-ADCP-0001 | Location disclosure tiers | ADD-005 | 🔴 gap |
+| OEP-ADCP-0002 | Loop separation and capacity caps | ADD-012 | 🔴 gap |
+| OEP-ADCP-0003 | Buyer eligibility and response obligations | ADD-013 (+ ADD-014 residue) | 🔴 gap |
+| OEP-ADCP-0004 | Creative integrity policy | ADD-009 | 🔴 gap |
+| OEP-ADCP-0005 | Approval SLA and earliest achievable start | ADD-008 | 🟡 partial |
+| OEP-ADCP-0006 | Planning targets in briefs, and unmet-target responses | ADD-015, ADD-002 | 🟡 partial |
+| OEP-ADCP-0007 | DOOH creative formats | ADD-006 | 🟡 partial |
+
+### To AAMP — [`proposals/aamp/`](proposals/aamp/)
+
+Nothing to propose for the three AAMP-owned additions — all three verified as already
+existing. Two **consistency findings** instead:
+
+| # | Title | Why |
+| --- | --- | --- |
+| OEP-AAMP-0001 | Agentic Direct has no DOOH placement object | ARTF has OpenRTB 2.6's `Dooh`; Agentic Direct's object set has none |
+| OEP-AAMP-0002 | The referenced DP-AA DOOH Extension is not implemented | Declared in `referencedSpecifications`, implemented nowhere. **Blocked** until we have read it |
+
+### Guidance instead of proposals
+
+| Addition | Output |
+| --- | --- |
+| ADD-001 | Migration note: `imp.ext.totalaud` → OpenRTB 2.6 `Imp.Qty` |
+| ADD-004 | Migration note: synthetic `site.domain` → `Dooh.venuetype` / `venuetypetax` |
+| ADD-007 | Review feedback on the experimental `coordinated_placements` format |
+| ADD-014 | Conformance mapping onto `OpenDirect.Order` / `Line` / `ChangeRequest` |
+| ADD-016 | Declare OOH claims inside the existing `get_adcp_capabilities` |
+
+Those three migration notes are, on reflection, the most immediately useful output of
+this whole exercise for a DOOH seller still on OpenRTB 2.5: they describe how to stop
+needing proprietary extensions at all.
+
 ## 6. Before anything is submitted
 
 Blocking:
 
-- [ ] **Verify every placement** against current AdCP and AAMP revisions. All 16
-      additions are `target_revision_checked: 2026-08-27` against public summaries, not
-      against the specs themselves.
+- [x] ~~Verify every placement against current AdCP and AAMP revisions.~~ **Done** —
+      [`verification/`](verification/), 2026-08-27.
+- [ ] **Read the DP-AA DOOH Extension** — prior art for anything we take to Agentic
+      Direct. Now the highest-priority research item, ahead of the blocked Ströer specs.
+- [ ] **Examine the four unexamined AAMP repositories** (`buyer-agent`, `seller-agent`,
+      `registry-agent-example`, `agentic-audiences`). ADD-016's placement is unverified.
+- [ ] **Correct `ooh-specifics/`** where verification contradicts it — at minimum
+      `02-trading-and-pricing-models.md` (period pricing exists as `time-option`) and
+      `07-availability-and-booking-lifecycle.md` (soft holds exist as
+      `reservedexpirydate`).
 - [ ] **Retrieve the two blocked specifications** ([`analysis/open-gaps.md`](analysis/open-gaps.md) §1).
       ADD-008 cannot be finished without the rejection reason-code taxonomy.
 - [ ] **Get answers to the eight Ströer questions** (§3 of the same file). At least three
       change the shape of an addition rather than its detail.
-- [ ] **Settle the AdCP extension strategy** (§1 above) with the maintainers.
+- [x] ~~Settle the AdCP extension strategy.~~ **Resolved by verification** — AdCP has a
+      versioned `ext.{namespace}` mechanism. Confirm the `ooh` namespace with the
+      maintainers rather than debating the approach.
 - [ ] **Resolve the 24 h / 48 h approval SLA contradiction.**
 
 Strongly recommended:

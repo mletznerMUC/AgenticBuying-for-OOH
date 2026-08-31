@@ -22,7 +22,10 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ADD_DIR = os.path.join(ROOT, "additions")
 
 REQUIRED = {"id", "title", "version", "status", "supersedes", "superseded_by",
-            "origin", "targets", "applies_to"}
+            "origin", "targets", "applies_to", "protocol_ownership",
+            "upstream_status"}
+PROTOCOLS = {"adcp", "aamp"}
+UPSTREAM = {"exists", "partial", "gap"}
 STATUSES = {"draft", "review", "stable", "deprecated", "superseded", "withdrawn"}
 APPLIES = {"programmatic", "io"}
 ADCP = {"media-buy", "creative", "signals", "accounts", "governance",
@@ -54,8 +57,11 @@ def front_matter(path):
 
 def check_additions():
     additions = {}
-    files = sorted(f for f in os.listdir(ADD_DIR)
-                   if f.startswith("ADD-") and f.endswith(".md"))
+    files = sorted(
+        os.path.relpath(os.path.join(dp, f), ADD_DIR)
+        for dp, _, fns in os.walk(ADD_DIR)
+        for f in fns
+        if f.startswith("ADD-") and f.endswith(".md"))
     if not files:
         err("no addition files found")
     for fn in files:
@@ -69,7 +75,8 @@ def check_additions():
             err(f"{fn}: front matter missing keys: {sorted(missing)}")
             continue
 
-        file_id = fn.split("-")[0] + "-" + fn.split("-")[1]
+        base = os.path.basename(fn)
+        file_id = base.split("-")[0] + "-" + base.split("-")[1]
         if fm["id"] != file_id:
             err(f"{fn}: front matter id {fm['id']!r} != file name id {file_id!r}")
         if fm["id"] in additions:
@@ -84,6 +91,24 @@ def check_additions():
             err(f"{fn}: status 'stable' requires version >= 1.0.0")
         if fm["status"] == "superseded" and not fm.get("superseded_by"):
             err(f"{fn}: status 'superseded' but superseded_by is empty")
+
+        own = fm.get("protocol_ownership") or {}
+        owner = own.get("owner")
+        if owner not in PROTOCOLS:
+            err(f"{fn}: protocol_ownership.owner must be one of {sorted(PROTOCOLS)}")
+        else:
+            expected_dir = owner
+            actual_dir = os.path.dirname(fn)
+            if actual_dir != expected_dir:
+                err(f"{fn}: owner is {owner!r} so the file must live in "
+                    f"additions/{expected_dir}/, not additions/{actual_dir or '.'}/")
+        bad_sec = set(own.get("secondary") or []) - PROTOCOLS
+        if bad_sec:
+            err(f"{fn}: unknown secondary protocol(s) {sorted(bad_sec)}")
+        if owner in (own.get("secondary") or []):
+            err(f"{fn}: owner {owner!r} also listed as secondary")
+        if fm.get("upstream_status") not in UPSTREAM:
+            err(f"{fn}: upstream_status must be one of {sorted(UPSTREAM)}")
 
         bad = set(fm["applies_to"]) - APPLIES
         if bad:
@@ -115,7 +140,7 @@ def check_registry(additions):
         if row is None:
             err(f"REGISTRY.md: {add_id} has no table row")
             continue
-        if fn not in row:
+        if fn.replace(os.sep, "/") not in row:
             err(f"REGISTRY.md: {add_id} row does not link to {fn}")
         if f"| {fm['version']} |" not in row:
             err(f"REGISTRY.md: {add_id} row version disagrees with front matter "

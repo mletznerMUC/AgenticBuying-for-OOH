@@ -1,7 +1,7 @@
 ---
 id: ADD-014
 title: Accreditation, Insertion Order and Settlement
-version: 0.1.0
+version: 0.2.0
 status: draft
 since: R1.0
 supersedes: []
@@ -12,11 +12,30 @@ targets:
   aamp: [agentic-direct, agent-sdks-and-registry]
 applies_to: [programmatic, io]
 target_revision_checked: 2026-08-27
+protocol_ownership:
+  owner: aamp
+  secondary: [adcp]
+upstream_status: exists
+verified_against:
+  adcp: 3.2.0-beta.8
+  aamp: "agentic-direct/OpenDirect-2.1; ARTF/OpenRTB-2.6"
+  date: 2026-08-27
 ---
 
 # ADD-014 — Accreditation, Insertion Order and Settlement
 
-> Version 0.1.0 · Status: `draft` · Since `R1.0`
+> Version 0.2.0 · Status: `draft` · Since `R1.0`
+>
+> **Protocol owner: AAMP** · also binds into AdCP
+>
+> 🟢 **Verified exists upstream** against AdCP 3.2.0-beta.8 and AAMP (OpenDirect 2.1 / OpenRTB 2.6) on 2026-08-27.
+
+## Verification
+
+`OpenDirect.Order`/`Line`/`ChangeRequest` exist, with `preferredbillingmethod`, `leadtime` and `reservedexpirydate` (soft holds); AdCP `commercial-terms` adds `invoice_recipient`. The surviving requirement moves to ADD-013.
+
+Full evidence: [`../verification/verdicts.md`](../../verification/verdicts.md) · [`../verification/adcp-3.2.md`](../../verification/adcp-3.2.md) · [`../verification/aamp.md`](../../verification/aamp.md)
+
 
 ## Problem
 
@@ -179,4 +198,5 @@ fails silently at booking.
 
 | Version | Date | Change |
 | --- | --- | --- |
+| 0.2.0 | 2026-08-27 | Verified against AdCP 3.2.0-beta.8 and AAMP; added protocol ownership and upstream status |
 | 0.1.0 | 2026-08-27 | Initial draft from Ströer accreditation and IO appendix |

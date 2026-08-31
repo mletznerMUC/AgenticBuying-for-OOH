@@ -8,4 +8,5 @@ permitted edit to a published manifest is an erratum note pointing at its succes
 
 | Release | Date | Additions | Status |
 | --- | --- | --- | --- |
-| [R1.0](R1.0.md) | 2026-08-27 | 16 | published, all `draft` |
+| [**R1.1**](R1.1.md) | 2026-08-27 | 16 @ 0.2.0 | **current** — verified against upstream |
+| [R1.0](R1.0.md) | 2026-08-27 | 16 @ 0.1.0 | superseded by R1.1 |
